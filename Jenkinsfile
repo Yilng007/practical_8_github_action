@@ -15,14 +15,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'start gradlew test'
-                //bat 'gradle test'
+                //bat 'start gradlew test'
+                bat 'gradle test'
                 //powershell 'gradle test'
             }
         }
         stage('Deploy') {
             steps {
-               bat 'java -jar build/libs/hello-world-java.jar'
+               powershell 'java -jar build/libs/hello-world-java.jar'
             }
         }
     }
